@@ -1,0 +1,2 @@
+<app-hero-detail *ngIf="(hero$ | async) as hero" app-hero-detail [hero]="hero" (save)="save($event)" (goBack)="goBack()">
+</app-hero-detail>
