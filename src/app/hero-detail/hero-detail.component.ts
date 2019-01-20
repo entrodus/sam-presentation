@@ -12,6 +12,10 @@ export class HeroDetailComponent {
   @Output() save = new EventEmitter<Hero>();
   @Output() goBack = new EventEmitter<any>();
 
+  get displayName(): string {
+    return this.hero.name || '[anonymous hero]';
+  }
+
   constructor() { }
 
   emitGoBack(): void {
