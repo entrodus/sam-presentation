@@ -43,4 +43,27 @@ export default sandboxOf(HeroDetailComponent, {
       },
       actions: []
     }
+  })
+  .add('host width is not big enough', {
+    template: `
+    <div>
+      <app-hero-detail [hero]="hero"></app-hero-detail>
+    </div>
+    `,
+    context: {
+      hero: SAVED_HERO,
+      logAction: (actions: string[], actionDescription: string) => {
+        actions.push(actionDescription);
+      },
+      actions: []
+    },
+    styles: [
+      `
+        div {
+          width: 200px;
+          background: red;
+        }
+      `
+    ]
   });
+
